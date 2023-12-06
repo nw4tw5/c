@@ -5,12 +5,11 @@ task:
   alias: Tests
   compute_engine_instance:
     image_project: cirrus-images # GCP project.
-    image: family/docker-kvm # family or a full image name.
+    image: family/docker-kvm\
     platform: linux
-    architecture: amd64 # optional. By default, amd64 is assumed.
-    cpu: 8 # optional. Defaults to 2 CPUs.
-    memory: 16G # optional. Defaults to 4G.
-    disk: 100 # optional. By default, uses the smallest disk size required by the image.
+    architecture: amd64
+    cpu: 16
+    memory: 32G
     nested_virtualization: true
   matrix:
     - name: Build

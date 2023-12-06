@@ -1,4 +1,5 @@
 task:
+  timeout_in: 168h
   use_compute_credits: true
   name: Test linux
   alias: Tests
